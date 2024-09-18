@@ -88,5 +88,15 @@ CREATE TABLE genshin_personagens (
 
 SELECT * FROM genshin_personagens WHERE rarity = 5;
 SELECT * FROM genshin_personagens WHERE rarity = 4;
-
+SELECT * FROM genshin_personagens WHERE arkhe = "pneuma";
+SELECT * FROM genshin_personagens WHERE arkhe = "ousia";
+SELECT * FROM genshin_personagens WHERE region = "Mondstadt";
+SELECT * FROM genshin_personagens WHERE region = "Liyue";
+SELECT * FROM genshin_personagens WHERE region = "Inazuma";
+SELECT * FROM genshin_personagens WHERE region = "Sumeru";
+SELECT * FROM genshin_personagens WHERE region = "Fontaine";
+SELECT * FROM genshin_personagens WHERE vision = "Pyro";
+SELECT * FROM genshin_personagens WHERE vision = "Hydro";
+SELECT * FROM genshin_personagens WHERE vision = "Anemo";
+SELECT * FROM genshin_personagens WHERE vision = "Cryo";
 
