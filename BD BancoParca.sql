@@ -2,15 +2,6 @@ CREATE DATABASE bancoparca;
 USE bancoparca;
 
 
-CREATE TABLE contas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titular VARCHAR(100) NOT NULL UNIQUE,
-    saldo DECIMAL(10, 2) NOT NULL DEFAULT 0,
-    cpf VARCHAR(11),
-	numero_conta VARCHAR(20),
-    FOREIGN KEY (cpf) REFERENCES perfis(cpf) 
-);
-
 CREATE TABLE perfis (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tipo_perfil ENUM('Gerente Geral', 'Chefe de Setor', 'Funcionário', 'Cliente') NOT NULL,
@@ -19,8 +10,18 @@ CREATE TABLE perfis (
     celular VARCHAR(20),
     sobrenome VARCHAR(50),
     email VARCHAR(100),
-    cpf VARCHAR(11)
+    cpf VARCHAR(11) UNIQUE
 );
+
+CREATE TABLE contas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titular VARCHAR(100) NOT NULL UNIQUE,
+    saldo DECIMAL(10, 2) NOT NULL DEFAULT 0,
+    cpf VARCHAR(11),
+    numero_conta VARCHAR(20),
+    FOREIGN KEY (cpf) REFERENCES perfis(cpf) 
+);
+
 
 INSERT INTO perfis (tipo_perfil, titular, senha, celular,sobrenome,email,cpf) VALUES 
 ('Gerente Geral', 'admin', 'senha_admin'),
