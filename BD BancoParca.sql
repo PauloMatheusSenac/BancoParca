@@ -23,14 +23,6 @@ CREATE TABLE contas (
 );
 
 
-CREATE TABLE contas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titular VARCHAR(100) NOT NULL UNIQUE,
-    saldo DECIMAL(10, 2) NOT NULL DEFAULT 0,
-    cpf VARCHAR(11) UNIQUE,
-    numero_conta VARCHAR(20) UNIQUE,
-    FOREIGN KEY (cpf) REFERENCES perfis(cpf)
-);
 
 INSERT INTO perfis (tipo_perfil, titular, senha, celular, sobrenome, email, cpf) VALUES 
 ('Gerente Geral', 'admin', 'senha_admin', '1234567890', 'Admin', 'admin@example.com', '12345678910'),
